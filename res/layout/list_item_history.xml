@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="240dp"
+    android:orientation="vertical"
+    android:background="@drawable/card_bg"
+    android:elevation="3dp"
+    android:layout_margin="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/item_thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:background="#10FFFFFF" />
+
+        <TextView
+            android:id="@+id/item_type_badge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_margin="8dp"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="3dp"
+            android:background="#CC000000"
+            android:textColor="#FFFFFF"
+            android:textSize="8sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/item_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:minLines="2"
+            android:textColor="@color/onSurface"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/item_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/onSurfaceVariant"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <!-- Action Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:background="#08FFFFFF"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/btn_play"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@android:drawable/ic_media_play"
+            android:padding="10dp"
+            android:tint="@color/primary"
+            android:background="?android:attr/selectableItemBackground" />
+
+        <View android:layout_width="1dp" android:layout_height="20dp" android:background="#1AFFFFFF" />
+
+        <ImageView
+            android:id="@+id/btn_share"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@android:drawable/ic_menu_share"
+            android:padding="10dp"
+            android:tint="@color/onSurfaceVariant"
+            android:background="?android:attr/selectableItemBackground" />
+
+        <View android:layout_width="1dp" android:layout_height="20dp" android:background="#1AFFFFFF" />
+
+        <ImageView
+            android:id="@+id/btn_export"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@android:drawable/ic_menu_save"
+            android:padding="10dp"
+            android:tint="@color/onSurfaceVariant"
+            android:background="?android:attr/selectableItemBackground" />
+
+        <View android:layout_width="1dp" android:layout_height="20dp" android:background="#1AFFFFFF" />
+
+        <ImageView
+            android:id="@+id/btn_delete"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@android:drawable/ic_menu_delete"
+            android:padding="10dp"
+            android:tint="#FF5252"
+            android:background="?android:attr/selectableItemBackground" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- URL Input Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_bg"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <EditText
+                android:id="@+id/home_url_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Paste URL here..."
+                android:textColorHint="@color/onSurfaceVariant"
+                android:textColor="@color/onSurface"
+                android:background="@drawable/card_bg"
+                android:backgroundTint="@color/inputBackground"
+                android:padding="16dp"
+                android:textSize="14sp"
+                android:inputType="textUri" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp">
+
+                <Button
+                    android:id="@+id/btn_fetch_info"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="1"
+                    android:text="FETCH"
+                    android:backgroundTint="@color/surfaceVariant"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn_quick_download"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:text="DOWNLOAD"
+                    android:backgroundTint="@color/primary"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Loading Spinner -->
+        <ProgressBar
+            android:id="@+id/loading_spinner"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:visibility="gone"
+            android:indeterminateTint="@color/primary" />
+
+        <!-- Preview Card -->
+        <LinearLayout
+            android:id="@+id/preview_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/card_bg"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/img_thumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:background="#000000" />
+
+            <TextView
+                android:id="@+id/txt_preview_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Video Title"
+                android:textStyle="bold"
+                android:textColor="@color/onSurface" />
+
+            <Spinner
+                android:id="@+id/quality_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/onSurface" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp">
+
+                <Button
+                    android:id="@+id/home_download_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="64dp"
+                    android:layout_weight="1"
+                    android:text="MP4"
+                    android:backgroundTint="@color/primary"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/home_mp3_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="64dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:text="MP3"
+                    android:backgroundTint="@color/surfaceVariant"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Active Progress -->
+        <LinearLayout
+            android:id="@+id/progress_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/card_bg"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/progress_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Downloading..."
+                android:textStyle="bold"
+                android:textColor="@color/onSurface" />
+
+            <ProgressBar
+                android:id="@+id/home_progress_bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:layout_marginTop="16dp"
+                android:progressTint="@color/primary" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+                <TextView android:id="@+id/progress_percent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0%" android:textColor="@color/primary" android:textStyle="bold" />
+                <TextView android:id="@+id/progress_speed" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:text="0 MB/s" android:textSize="12sp" android:textColor="@color/onSurfaceVariant" />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

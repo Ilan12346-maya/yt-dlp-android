@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical"
+    android:padding="4dp"
+    android:fitsSystemWindows="true">
+
+    <!-- Terminal Output Area -->
+    <ScrollView
+        android:id="@+id/logScroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#000000"
+        android:fadeScrollbars="false">
+
+        <TextView
+            android:id="@+id/logView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="[SYSTEM] Initializing shell...\n"
+            android:textColor="#FFFFFF"
+            android:fontFamily="monospace"
+            android:textSize="12sp"
+            android:lineSpacingExtra="2dp"
+            android:textIsSelectable="true" />
+    </ScrollView>
+
+    <!-- Progress Indicator -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:progressTint="#00FF00"
+        android:visibility="gone" />
+
+    <!-- Input Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1A1A1A"
+        android:orientation="horizontal"
+        android:padding="4dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$ "
+            android:textColor="#00FF00"
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:paddingStart="4dp" />
+
+        <EditText
+            android:id="@+id/urlInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="enter command or url"
+            android:textColorHint="#555555"
+            android:textColor="#FFFFFF"
+            android:fontFamily="monospace"
+            android:textSize="14sp"
+            android:imeOptions="actionGo"
+            android:inputType="textNoSuggestions"
+            android:padding="8dp" />
+
+        <ImageButton
+            android:id="@+id/downloadBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_send"
+            android:tint="#00FF00" />
+            
+        <Button
+            android:id="@+id/clearBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CLR"
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="8dp"
+            android:backgroundTint="#333333"
+            android:textColor="#FF0000" />
+
+        <Button
+            android:id="@+id/copyBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="COPY"
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="8dp"
+            android:backgroundTint="#333333"
+            android:textColor="#00AAFF"
+            android:layout_marginStart="4dp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background">#0F0F0F</color>
+    <color name="surface">#1A1A1A</color>
+    <color name="surfaceVariant">#252525</color>
+    <color name="primary">#3EA6FF</color> <!-- YouTube Blue -->
+    <color name="onBackground">#F1F1F1</color>
+    <color name="onSurface">#FFFFFF</color>
+    <color name="onSurfaceVariant">#AAAAAA</color>
+    <color name="outline">#333333</color>
+    <color name="inputBackground">#222222</color>
+    <color name="error">#FF4E4E</color>
+    <color name="success">#2BA640</color>
+</resources>

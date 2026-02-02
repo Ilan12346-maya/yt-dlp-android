@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">YT-DLP Android</string>
+    <string name="url_hint">Video URL</string>
+    <string name="download_button">Download</string>
+</resources>

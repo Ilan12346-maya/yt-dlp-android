@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/background" android:animateLayoutChanges="true">
+    <WebView android:id="@+id/webView" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_alignParentTop="true" android:paddingBottom="160dp" android:clipToPadding="false" />
+    <FrameLayout android:id="@+id/dynamic_island" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_marginHorizontal="16dp" android:layout_marginBottom="160dp" android:background="@drawable/card_bg" android:elevation="8dp">
+        <FrameLayout android:id="@+id/island_content" android:layout_width="match_parent" android:layout_height="wrap_content" android:animateLayoutChanges="true" android:minHeight="56dp">
+            <LinearLayout android:id="@+id/state_browser" android:layout_width="match_parent" android:layout_height="56dp" android:orientation="horizontal" android:gravity="center_vertical" android:paddingHorizontal="4dp">
+                <ImageView android:id="@+id/btn_browser_home" android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/ic_home" android:padding="10dp" android:tint="#FFFFFF" android:background="?android:attr/selectableItemBackgroundBorderless" />
+                <ImageView android:id="@+id/btn_browser_back" android:layout_width="40dp" android:layout_height="40dp" android:src="@android:drawable/ic_media_previous" android:padding="10dp" android:tint="#FFFFFF" android:background="?android:attr/selectableItemBackgroundBorderless" />
+                <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1">
+                    <EditText android:id="@+id/browser_url_input" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@null" android:hint="Search or enter URL" android:textColor="#FFFFFF" android:textColorHint="#80FFFFFF" android:textSize="13sp" android:singleLine="true" android:imeOptions="actionGo" android:paddingHorizontal="8dp" />
+                    <LinearLayout android:id="@+id/browser_progress_container" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="horizontal" android:gravity="center_vertical" android:paddingHorizontal="8dp" android:visibility="gone" android:background="#F21A1A1A">
+                        <ProgressBar android:id="@+id/browser_progress_bar" style="?android:attr/progressBarStyleHorizontal" android:layout_width="0dp" android:layout_height="4dp" android:layout_weight="1" android:progressTint="@color/primary" android:progressBackgroundTint="#33FFFFFF" />
+                        <TextView android:id="@+id/browser_progress_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0%" android:textColor="@color/primary" android:textSize="10sp" android:textStyle="bold" android:layout_marginStart="8dp"/>
+                    </LinearLayout>
+                </FrameLayout>
+                <ImageView android:id="@+id/btn_browser_settings" android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/ic_settings" android:padding="10dp" android:tint="#FFFFFF" android:background="?android:attr/selectableItemBackgroundBorderless" />
+                <ImageView android:id="@+id/btn_browser_download" android:layout_width="40dp" android:layout_height="40dp" android:src="@android:drawable/stat_sys_download" android:padding="10dp" android:tint="@color/primary" android:background="?android:attr/selectableItemBackgroundBorderless" />
+                <ImageView android:id="@+id/btn_browser_refresh" android:layout_width="40dp" android:layout_height="40dp" android:src="@android:drawable/ic_menu_rotate" android:padding="10dp" android:tint="#FFFFFF" android:background="?android:attr/selectableItemBackgroundBorderless" />
+            </LinearLayout>
+            <LinearLayout android:id="@+id/state_loading" android:layout_width="match_parent" android:layout_height="56dp" android:orientation="horizontal" android:gravity="center" android:visibility="gone">
+                <TextView android:id="@+id/txt_loading_anim" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Get informations" android:textColor="@color/primary" android:textStyle="bold" android:textSize="14sp" />
+                <ProgressBar android:layout_width="24dp" android:layout_height="24dp" android:layout_marginStart="12dp" android:indeterminateTint="@color/primary" />
+            </LinearLayout>
+            <LinearLayout android:id="@+id/state_selection" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp" android:visibility="gone">
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp">
+                    <TextView android:id="@+id/sel_title" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_toStartOf="@+id/sel_btn_close" android:text="Video Title" android:textSize="14sp" android:textStyle="bold" android:textColor="@color/onSurface" android:maxLines="2" android:ellipsize="end" />
+                    <ImageView android:id="@+id/sel_btn_close" android:layout_width="32dp" android:layout_height="32dp" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:src="@android:drawable/ic_menu_close_clear_cancel" android:tint="@color/primary" android:padding="4dp" android:background="?android:attr/selectableItemBackgroundBorderless" />
+                </RelativeLayout>
+                <ImageView android:id="@+id/sel_thumbnail" android:layout_width="match_parent" android:layout_height="140dp" android:scaleType="centerCrop" android:background="#20FFFFFF" android:layout_marginBottom="12dp" />
+                <Spinner android:id="@+id/sel_quality_spinner" android:layout_width="match_parent" android:layout_height="48dp" android:backgroundTint="@color/onSurface" android:layout_marginBottom="16dp" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <Button android:id="@+id/sel_btn_mp4" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="MP4" android:backgroundTint="@color/primary" android:textColor="#000000" android:textStyle="bold" />
+                    <View android:layout_width="8dp" android:layout_height="1dp" />
+                    <Button android:id="@+id/sel_btn_mp3" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="MP3" android:backgroundTint="@color/surfaceVariant" android:textColor="@color/primary" android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/state_settings" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp" android:visibility="gone">
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Settings" android:textSize="16sp" android:textStyle="bold" android:textColor="@color/onSurface" android:layout_centerVertical="true" />
+                    <ImageView android:id="@+id/set_btn_close" android:layout_width="32dp" android:layout_height="32dp" android:layout_alignParentEnd="true" android:src="@android:drawable/ic_menu_close_clear_cancel" android:tint="@color/primary" android:padding="4dp" android:background="?android:attr/selectableItemBackgroundBorderless" />
+                </RelativeLayout>
+                <EditText android:id="@+id/set_home_url" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Home URL (e.g. https://google.com)" android:textColor="#FFFFFF" android:textColorHint="#80FFFFFF" android:textSize="14sp" android:layout_marginBottom="12dp" />
+                <CheckBox android:id="@+id/set_debug_mode" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Enable Backend Tab" android:textColor="#FFFFFF" android:buttonTint="@color/primary" android:layout_marginBottom="16dp" />
+                <Button android:id="@+id/set_btn_save" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="SAVE &amp; CLOSE" android:backgroundTint="@color/primary" android:textColor="#000000" />
+            </LinearLayout>
+        </FrameLayout>
+    </FrameLayout>
+</RelativeLayout>
