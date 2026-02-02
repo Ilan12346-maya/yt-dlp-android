@@ -14,7 +14,6 @@ backup.py
 *.gz
 
 # Generated assets
-assets/python.tar.gz
 python.tar.gz
 
 # Security
