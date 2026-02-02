@@ -40,4 +40,4 @@ done
 cp /data/data/com.termux/files/usr/bin/ffmpeg "$TARGET_DIR/libffmpeg_exe.so"
 cp /data/data/com.termux/files/usr/bin/python3.12 "$TARGET_DIR/libpython_exe.so"
 
-echo "[!] Done. Now run ./build.sh to package the new libs."
+echo "[!] Done"
