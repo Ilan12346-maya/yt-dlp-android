@@ -35,7 +35,7 @@ This project is a deep-dive into Android's low-level system, developed and built
 If you want to use your own libraries or a different version of FFmpeg:
 1. Use the provided `collect_libs.sh` inside a Termux environment to gather the latest `.so` files.
 2. Replace the files in `lib/arm64-v8a/` and `python_bundle/`.
-3. Run `python3 bundle.py` to create the `assets/python.tar.gz` required for the Android app.
+3. Run `python3 python_bundle_generate.py` to create the `assets/python.tar.gz` required for the Android app.
 4. Use your preferred Android build tools to re-package the app.
 
 ## License
