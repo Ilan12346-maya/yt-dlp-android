@@ -995,7 +995,6 @@ public class MainActivity extends Activity {
                        "3. Copyright: Always respect international copyright laws. This tool is intended for personal and educational use only.\n\n" +
                        "Use this software at your own risk. By clicking 'AGREE', you confirm your compliance with these terms.")
             .setPositiveButton("AGREE", (d, w) -> {
-                prefs.edit().putBoolean("first_start", false).apply();
                 downloadYtDlp();
             })
             .setNegativeButton("EXIT", (d, w) -> finish())
@@ -1034,6 +1033,7 @@ public class MainActivity extends Activity {
 
                 runOnUiThread(() -> {
                     progressDialog.dismiss();
+                    prefs.edit().putBoolean("first_start", false).apply();
                     switchTab("home");
                     logToBackend("[SYSTEM] yt-dlp updated to latest version.");
                 });
@@ -1042,8 +1042,20 @@ public class MainActivity extends Activity {
             } catch (Exception e) {
                 runOnUiThread(() -> {
                     progressDialog.dismiss();
-                    toastAndLog("Download failed: " + e.getMessage());
-                    switchTab("home"); // Fallback to asset version
+                    File ytdlpFile = new File(ytdlpPath);
+                    if (ytdlpFile.exists()) {
+                        logToBackend("[SYSTEM] Update failed, but local yt-dlp found. Starting...");
+                        prefs.edit().putBoolean("first_start", false).apply();
+                        switchTab("home");
+                    } else {
+                        toastAndLog("Download failed: " + e.getMessage());
+                        new AlertDialog.Builder(MainActivity.this)
+                            .setTitle("Initialization Failed")
+                            .setMessage("Could not download required components. Please check your internet connection and restart the app.")
+                            .setPositiveButton("EXIT", (d, w) -> finish())
+                            .setCancelable(false)
+                            .show();
+                    }
                 });
             }
         }).start();
