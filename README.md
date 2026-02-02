@@ -29,13 +29,13 @@ This project is a deep-dive into Android's low-level system, developed and built
 ### The "Portable Linux" Approach
 - **Pre-compiled Binaries:** The app bundles a **custom-compiled, minimal version of FFmpeg** to keep the APK size optimized while providing all necessary features for media merging.
 - **Termux Libraries:** All shared libraries (`.so` files) in `lib/` are sourced from the Termux repository. They have been carefully collected to allow the binaries to run standalone without a full Termux installation.
-- **Manual Toolchain:** Instead of Gradle, this project uses a custom shell-based build process (`aapt2`, `javac`, `d8`) to maintain full control over the packaging.
+- **Manual Toolchain:** This project uses a custom manual build process to maintain full control over the packaging.
 
 ### Custom Compilation & Updates
 If you want to use your own libraries or a different version of FFmpeg:
 1. Use the provided `collect_libs.sh` (see below) inside a Termux environment to gather the latest `.so` files.
 2. Replace the files in `lib/arm64-v8a/` and `python_bundle/`.
-3. Re-run `./build.sh`.
+3. Use your preferred Android build tools to re-package the app.
 
 ## License
 This project is licensed under the **GNU General Public License v3.0 (GPLv3)**. See [LICENSE.md](LICENSE.md) for details, including third-party licenses for yt-dlp, FFmpeg, and Python.
