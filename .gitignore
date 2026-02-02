@@ -14,7 +14,8 @@ backup.py
 *.gz
 
 # Generated assets
-python_bundle_generate.py
+assets/python.tar.gz
+python.tar.gz
 
 # Security
 debug.keystore
